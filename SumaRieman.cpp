@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
     double limite_superior = XFINAL;
     double incremento;
     
-    printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n","dim","dursec[dim]","durpar[dim]","#pasos","resultSec","resultPar","Aceleracion","Eficiencia");
+    printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n","dim","#pasos","dursec[dim]","durpar[dim]","resultSec","resultPar","Aceleracion","Reduccion(%)","Eficiencia");
 
 
 
@@ -75,7 +75,7 @@ int main(int argc, char const *argv[])
     resulSec[dim]=resultadoSec/VECES;
     resulPar[dim]=resultadoPar/VECES;
 
-     printf("%i\t%f\t%f\t%i\t%f\t%f\t%f\t%f\n",dim, dursec[dim], durpar[dim],n[dim],resulSec[dim],resulPar[dim],dursec[dim]/durpar[dim],(dursec[dim]/durpar[dim])/PROCESADORES);
+     printf("%i\t%i\t%f\t%f\t%f\t%f\t%f\t%f\t%f\n",dim,n[dim], dursec[dim], durpar[dim],resulSec[dim],resulPar[dim],dursec[dim]/durpar[dim],(dursec[dim]-durpar[dim])*100/dursec[dim],(dursec[dim]/durpar[dim])/PROCESADORES);
         
     }
     
